@@ -6,7 +6,7 @@ from pynput.mouse import Listener
 """
 This file is used for preprocessing before running images through EdgeConnect.
 When run, the code prompts the user to draw on an image, creating a white binary mask.
-As required by EdgeConnect, this generates a white binary mask, as well as an image with the binary mask overlayed.
+As required by EdgeConnect, this generates a white binary mask, an image with the binary mask overlayed, and a Canny edge-map to guide EdgeConnect.
 This binary mask represents the area that must be infilled by EdgeConnect.
 Note: the filenames and filepaths of the input and output images can be manually changed within the code.
 """
