@@ -35,7 +35,8 @@ python test.py \
   --mask [path to binary mask file] \
   --output [path to the output directory] \
   --edge [path to edge map]
-``` <br><br>
+```
+<br><br>
 To run LAMA instead, navigate to the directory `lama` and run: `export TORCH_HOME=$(pwd) && export PYTHONPATH=$(pwd)`.<br><br>
 Then go to this [link](https://drive.google.com/drive/folders/1B2x7eQDgecTL0oh3LSIBDGj0fTxs6Ips?usp=drive_link) and download `LaMa_models.zip` and unzip the folder under `lama`.<br><br>
 Move all input images and input masks to the `LaMa_test_images` directory. Name the inputs to follow the format: `image1_mask001.png` for the binary mask file, and `image1.png` for the image. <br><br> Then run:
