@@ -1,0 +1,8 @@
+[2025-05-10 13:37:13,491][saicinpainting.utils][WARNING] - Setting signal 1 handler <function print_traceback_handler at 0x31bbc7600>
+[2025-05-10 13:37:13,492][__main__][CRITICAL] - Prediction failed due to [Errno 2] No such file or directory: 'LaMa_models/lama-celeba-hq/config.yaml':
+Traceback (most recent call last):
+  File "/Users/sangeetsatpathy/Desktop/Experiment/lama/bin/predict.py", line 47, in main
+    with open(train_config_path, 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'LaMa_models/lama-celeba-hq/config.yaml'
+
