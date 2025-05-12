@@ -23,8 +23,7 @@ To try fusing the edges before feeding into EdgeConnect, run `fusing_edges.py`. 
 To preprocess for LAMA instead, run `generate_binary_mask_lama.py`. This creates a black binary mask instead, as required by LAMA, and doesn't include an edge-map.
 <br><br>
 
-4. Running EdgeConnect/LAMA<br><br>
-
+4. Running EdgeConnect/LaMa<br><br>
 To run EdgeConnect, move the files of the binary mask, the image with the binary mask overlayed, and the edge map into the folder `edge-connect`.<br><br>
 Before running, download the [CelebA Models](https://drive.google.com/drive/folders/13JgMA5sKMYgRwHBp4f7PBc5orNJ_Cv-p) and place it under the `edge-connect/checkpoints` folder. <br><br>
 Then run: 
@@ -36,4 +35,8 @@ python test.py \
   --mask [path to binary mask file] \
   --output [path to the output directory] \
   --edge [path to edge map]
-```
+``` <br><br>
+To run LAMA instead, navigate to the directory `lama` and run: `export TORCH_HOME=$(pwd) && export PYTHONPATH=$(pwd)`.<br><br>
+Then go to this [link](https://drive.google.com/drive/folders/1B2x7eQDgecTL0oh3LSIBDGj0fTxs6Ips?usp=drive_link) and download `LaMa_models.zip` and unzip the folder under `lama`.<br><br>
+Move all input images and input masks to the `LaMa_test_images` directory. Name the inputs to follow the format: `image1_mask001.png` for the binary mask file, and `image1.png` for the image. <br><br> Then run:
+`python bin/predict.py model.path=$(pwd)/LaMa_models/lama-celeba-hq/lama-regular indir=$(pwd)/LaMa_test_images outdir=$(pwd)results`
