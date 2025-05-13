@@ -2,7 +2,7 @@
 ### Pipeline:
 1. `sam_experiment.py`:<br>
 This code allows the user to segment the original images using SAM.<br>
-Note: you have to manually update the filepaths within the code.<br>
+Note: you have to manually update the filepaths within the code.<br> You also have to download the [ViT-H SAM Model](https://github.com/facebookresearch/segment-anything?tab=readme-ov-file) and put it under the same directory of the file.
 Running the code will prompt a small GUI to select points to include/exclude in the segmented image.<br>
 Left-clicking on a point (shown as a blue dot) will INCLUDE that point, and Right-Clicking (shown as a red dot) will EXCLUDE that point.
 <br><br>
