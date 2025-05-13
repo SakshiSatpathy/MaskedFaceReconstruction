@@ -25,15 +25,7 @@ To preprocess for LAMA instead, run `generate_binary_mask_lama.py`. This creates
 To run EdgeConnect, move the files of the binary mask, the image with the binary mask overlayed, and the edge map into the folder `edge-connect`.<br><br>
 Before running, download the [CelebA Models](https://drive.google.com/drive/folders/13JgMA5sKMYgRwHBp4f7PBc5orNJ_Cv-p) and place it under the `edge-connect/checkpoints` folder. <br><br>
 Then run: 
-```
-python test.py \
-  --model 2 \
-  --checkpoints ./checkpoints \
-  --input [path to file with input image with binary mask overlayed] \
-  --mask [path to binary mask file] \
-  --output [path to the output directory] \
-  --edge [path to edge map]
-```
+`python test.py --model 2 --checkpoints ./checkpoints --input [path to file with input image with binary mask overlayed]  --mask [path to binary mask file]  --output [path to the output directory]  --edge [path to edge map]`
 <br><br>
 5. Running [LaMa](https://github.com/advimman/lama) (instead of EdgeConnect)<br><br>
 To run LAMA instead, navigate to the directory `lama` and run: `export TORCH_HOME=$(pwd) && export PYTHONPATH=$(pwd)`.<br><br>
@@ -49,9 +41,9 @@ All outputs are in the folder `experiment_outputs`. Each subfolder `person_{i}` 
 `mask_test_{i}_segmented_mesh.obj`: the .obj output of the 3DMM <br>
 `mask_test_{i}_segmented_composed_image.jpg`: the image output of the rendered 3DMM mesh overlayed on top of segmented image <br>
 `angled_img_{0-4}.jpg`: the rendered image of the 3DMM mesh from 5 different angles, including the frontal view. <br>
-`attempt_1/binary_mask.jpg`: the binary mask to be infilled by EdgeConnect (output of `generate_binary_mask.py`)
-`attempt_1/edge_map.jpg`: the Canny edge map to guide EdgeConnect infilling (output of `generate_binary_mask.py`)
-`attempt_1/img_and_bm.jpg`: the rendered frontal image of 3DMM mesh with binary mask overlayed for EdgeConnect (output of `generate_binary_mask.py`)
+`attempt_1/binary_mask.jpg`: the binary mask to be infilled by EdgeConnect (output of `generate_binary_mask.py`)<br>
+`attempt_1/edge_map.jpg`: the Canny edge map to guide EdgeConnect infilling (output of `generate_binary_mask.py`)<br>
+`attempt_1/img_and_bm.jpg`: the rendered frontal image of 3DMM mesh with binary mask overlayed for EdgeConnect (output of `generate_binary_mask.py`)<br>
 `attempt_1/output.jpg`: the EdgeConnect output
 
 <br><br> For the first person, I ran several attempts. I first infilled his face from a side view, and then tried a frontal view. On my third attempt, I tried using fused edges with EdgeConnect, but it made no significant improvement in quality. Finally, `experiment_outputs/person_1/lama_attempt` shows the output of the LaMa trial, which did extremely poorly. After the first person, I focused on just doing frontal views using EdgeConnect. 
