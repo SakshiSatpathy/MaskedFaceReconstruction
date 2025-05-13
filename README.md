@@ -49,3 +49,10 @@ All outputs are in the folder `experiment_outputs`. Each subfolder `person_{i}` 
 <br><br> For the first person, I ran several attempts. I first infilled his face from a side view, and then tried a frontal view. On my third attempt, I tried using fused edges with EdgeConnect, but it made no significant improvement in quality. Finally, `experiment_outputs/person_1/lama_attempt` shows the output of the LaMa trial, which did extremely poorly. After the first person, I focused on just doing frontal views using EdgeConnect. 
 
 <br><br> There is also a folder `experiment_outputs/unmasked_3dmm_output`, which shows how the 3DMM performs with unmasked face images.
+
+### Notes
+`generate_views.py` is not used at all. It served as the original approach taken to load textures from .obj output of 3DMM.
+Originally, I modified the 3DMM-Fitting-Pytorch code to output a textured image. These attempts would fail due to incorrectly named variables.
+Additionally, Pytorch3D requires .mtl files to load the textured mesh, which I was unable to find outputted in the 3DMM-Fitting-Pytorch.
+This code was made to load the outputted mesh through Open3D, and load the textured image on top of it, and then convert it to Pytorch3D.
+This conversion would also lead to several errors. In the end, I finally found the correctly named rendered image from 3DMM-Fitting-Pytorch, and outputted it directly, effectively deprecating this file.
