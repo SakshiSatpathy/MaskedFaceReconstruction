@@ -56,3 +56,9 @@ Originally, I modified the 3DMM-Fitting-Pytorch code to output a textured image.
 Additionally, Pytorch3D requires .mtl files to load the textured mesh, which I was unable to find outputted in the 3DMM-Fitting-Pytorch.
 This code was made to load the outputted mesh through Open3D, and load the textured image on top of it, and then convert it to Pytorch3D.
 This conversion would also lead to several errors. In the end, I finally found the correctly named rendered image from 3DMM-Fitting-Pytorch, and outputted it directly, effectively deprecating this file.
+
+------
+Run bing_based_web_crawler.ipynb in Google Colab environment with lowest runtime setting.
+
+-----
+Run DINOv2-identity-preserving-efficacy.ipynb in Google Colab environment. Upload AFLW2000-3D.zip (also in this repository) to your Google Drive, and reset path to this dataset. Can change sample size at will. Choose A-100 High-RAM. 
